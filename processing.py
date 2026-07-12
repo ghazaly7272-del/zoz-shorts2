@@ -21,8 +21,8 @@ def probe_duration(path):
 
 def download_video(url, dest_dir):
     out = str(Path(dest_dir) / "source.mp4")
-   subprocess.run(["yt-dlp", source, "-f", "bv*[height<=1080]+ba/b",
-    "--merge-output-format","mp4","--cookies","cookies.txt","-o", out], check=True)
+    subprocess.run(["yt-dlp", url, "-f", "bv*[height<=1080]+ba/b",
+        "--merge-output-format","mp4","--cookies","cookies.txt","-o", out], check=True)
     return out
 
 def loudness_curve(src):
